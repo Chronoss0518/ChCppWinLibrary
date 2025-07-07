@@ -25,8 +25,6 @@ WindowsAPIを容易に利用することができる機能を追加
 3. プロジェクトに紐づいている`StaticLibrary.zip`ファイルを展開する
 4. `StaticLibrary.zip`を展開する
 5. `StaticLibrary`の中にあるStaticLibraryをリンクする
-    - `.linux.a`
-    - `.osx.a`
     - `.lib`
 
 # 予定
@@ -35,8 +33,8 @@ WindowsAPIを容易に利用することができる機能を追加
 
 # このライブラリのコンセプト
 
-内容は「[ChCppBaseLibraryのREADME.md](https://github.com/Chronoss0518/ChCppBaseLibrary/blob/master/README.md)」を参照してください
+内容は「[ChCppBaseLibraryのREADME.mdの「このライブラリのコンセプト」](https://github.com/Chronoss0518/ChCppBaseLibrary/blob/master/README.md)」を参照してください
 
 # 歴史
 
-内容は「[ChCppBaseLibraryのREADME.md](https://github.com/Chronoss0518/ChCppBaseLibrary/blob/master/README.md)」を参照してください
+内容は「[ChCppBaseLibraryのREADME.mdの「歴史」](https://github.com/Chronoss0518/ChCppBaseLibrary/blob/master/README.md)」を参照してください
