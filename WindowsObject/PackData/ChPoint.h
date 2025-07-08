@@ -3,7 +3,7 @@
 #ifndef Ch_Win_Point_h
 #define Ch_Win_Point_h
 
-#include"../../BasePack/ChMath.h"
+#include"../../../ChCppBaseLibrary/BasePack/ChMath.h"
 
 #ifndef	Ch_Win_POINT_MATH_METHOD
 #define	Ch_Win_POINT_MATH_METHOD(_Operator,_BaseClass,_ArgsClass,_MathFunction) \

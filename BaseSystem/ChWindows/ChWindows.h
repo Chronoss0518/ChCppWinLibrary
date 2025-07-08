@@ -10,7 +10,8 @@
 std::basic_string<_CharType> ToRelativePath##_AorW##(const std::basic_string<_CharType>& _path)
 #endif
 
-#include"../ChBaseSystem/ChBaseSystem.h"
+#include"../../../ChCppBaseLibrary/BaseSystem/ChBaseSystem/ChBaseSystem.h"
+
 #include"../../WindowsObject/WindObject/ChWindObject.h"
 #include"../../WindowsObject/WindClassObject/ChWindClassObject.h"
 
@@ -29,24 +30,24 @@ namespace ChWin
 
 namespace ChSystem
 {
-	//Windows‚Åì¬‚³‚ê‚½Wind‚ÆWindows‚ÉŠÖ‚·‚é“üo—Í‚È‚Ç‚ğŠÇ—‚µ‚½A//
-	//WIndows‘S‘Ì‚ÌŠÇ—ƒNƒ‰ƒX//
+	//Windowsï¿½Åì¬ï¿½ï¿½ï¿½ê‚½Windï¿½ï¿½Windowsï¿½ÉŠÖ‚ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½Í‚È‚Ç‚ï¿½ï¿½Ç—ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½A//
+	//WIndowsï¿½Sï¿½Ì‚ÌŠÇ—ï¿½ï¿½Nï¿½ï¿½ï¿½X//
 	template<typename CharaType>
 	class WindowsBase :public BaseSystem
 	{
 	protected://Set Functions//
 
-		//Windows‚Å‚ÌƒL[‘S‘Ì‚ğƒ`ƒFƒbƒN‚·‚é‚½‚ß‚ÌŠÖ”//
+		//Windowsï¿½Å‚ÌƒLï¿½[ï¿½Sï¿½Ì‚ï¿½ï¿½`ï¿½Fï¿½bï¿½Nï¿½ï¿½ï¿½é‚½ï¿½ß‚ÌŠÖï¿½//
 		void SetKeyCode()override;
 
 	public://GetFunction//
 
-		//Windƒnƒ“ƒhƒ‹‚Ìæ“¾//
+		//Windï¿½nï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Ìæ“¾//
 		virtual HWND GethWnd(void) const = 0;
 
 		virtual HINSTANCE GetInstance(void)const = 0;
 
-		//ƒƒbƒZ[ƒW‚Ì’l‚ğ•Ô‚·ŠÖ”//
+		//ï¿½ï¿½ï¿½bï¿½Zï¿½[ï¿½Wï¿½Ì’lï¿½ï¿½Ô‚ï¿½ï¿½Öï¿½//
 		virtual const LPMSG GetReturnMassage(void) const = 0;
 
 		unsigned long GetNowTime()override { return timeGetTime(); }
@@ -57,7 +58,7 @@ namespace ChSystem
 
 	public://Is Function//
 
-		//•W€‚ÌƒJ[ƒ\ƒ‹‚Ì•\¦ƒtƒ‰ƒO//
+		//ï¿½Wï¿½ï¿½ï¿½ÌƒJï¿½[ï¿½\ï¿½ï¿½ï¿½Ì•\ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½O//
 		inline void IsCursollShou(const bool _f) { ShowCursor(_f); }
 
 	protected://Member Value//
@@ -75,7 +76,7 @@ namespace ChSystem
 
 	public://Init And Release//
 
-		//Wind‚Ì¶¬(stringVer)//
+		//Windï¿½Ìï¿½ï¿½ï¿½(stringVer)//
 		void Init(
 			const ChWin::WindCreater& _creater,
 			const char* _appName,
@@ -137,7 +138,7 @@ namespace ChSystem
 			HMENU _hMenu = nullptr,
 			LPVOID _param = nullptr);
 
-		//Wind‚Ì‰ğ•ú//
+		//Windï¿½Ì‰ï¿½ï¿½//
 		void Release()override;
 
 	public://SetFunction//
@@ -150,19 +151,19 @@ namespace ChSystem
 
 	public://GetFunction//
 
-		//Windƒnƒ“ƒhƒ‹‚Ìæ“¾//
+		//Windï¿½nï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Ìæ“¾//
 		inline HWND GethWnd(void) const override { return wndObject.GethWnd(); }
 
 		inline HINSTANCE GetInstance(void)const override { return wndObject.GetInstance(); }
 
-		//ƒƒbƒZ[ƒW‚Ì’l‚ğ•Ô‚·ŠÖ”//
+		//ï¿½ï¿½ï¿½bï¿½Zï¿½[ï¿½Wï¿½Ì’lï¿½ï¿½Ô‚ï¿½ï¿½Öï¿½//
 		inline const LPMSG GetReturnMassage(void) const override { return wndObject.GetReturnMassage(); }
 
 		ChWin::WindObjectA& GetWindObject() { return wndObject; }
 
 	public://Is Function//
 
-		//WindMassage‚ğŠm”F‚·‚éŠÖ”//
+		//WindMassageï¿½ï¿½ï¿½mï¿½Fï¿½ï¿½ï¿½ï¿½Öï¿½//
 		bool IsUpdate()override;
 
 		inline bool IsCursorPosOnWindow() { return wndObject.IsCursorPosOnWindow(); }
@@ -182,7 +183,7 @@ namespace ChSystem
 
 	public://Init And Release//
 
-		//Wind‚Ì¶¬(stringVer)//
+		//Windï¿½Ìï¿½ï¿½ï¿½(stringVer)//
 		void Init(
 			const ChWin::WindCreater& _creater,
 			const wchar_t* _appName,
@@ -244,7 +245,7 @@ namespace ChSystem
 			HMENU _hMenu = nullptr,
 			LPVOID _param = nullptr);
 
-		//Wind‚Ì‰ğ•ú//
+		//Windï¿½Ì‰ï¿½ï¿½//
 		void Release()override;
 
 	public://SetFunction//
@@ -257,19 +258,19 @@ namespace ChSystem
 
 	public://GetFunction//
 
-		//Windƒnƒ“ƒhƒ‹‚Ìæ“¾//
+		//Windï¿½nï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Ìæ“¾//
 		inline HWND GethWnd(void) const override { return wndObject.GethWnd(); }
 
 		inline HINSTANCE GetInstance(void)const override { return wndObject.GetInstance(); }
 
-		//ƒƒbƒZ[ƒW‚Ì’l‚ğ•Ô‚·ŠÖ”//
+		//ï¿½ï¿½ï¿½bï¿½Zï¿½[ï¿½Wï¿½Ì’lï¿½ï¿½Ô‚ï¿½ï¿½Öï¿½//
 		inline const LPMSG GetReturnMassage(void) const override { return wndObject.GetReturnMassage(); }
 
 		ChWin::WindObjectW& GetWindObject() { return wndObject; }
 
 	public://Is Function//
 
-		//WindMassage‚ğŠm”F‚·‚éŠÖ”//
+		//WindMassageï¿½ï¿½ï¿½mï¿½Fï¿½ï¿½ï¿½ï¿½Öï¿½//
 		bool IsUpdate()override;
 
 		inline bool IsCursorPosOnWindow() { return wndObject.IsCursorPosOnWindow(); }

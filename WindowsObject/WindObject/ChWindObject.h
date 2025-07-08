@@ -71,9 +71,9 @@ bool ChWin::WindObject##_AorW::Update() {\
 	return true;}
 #endif
 
-#include"../../BasePack/ChPtr.h"
+#include"../../../ChCppBaseLibrary/BasePack/ChPtr.h"
 
-#include"../../ClassParts/ChCPInitializer.h"
+#include"../../../ChCppBaseLibrary/ClassParts/ChCPInitializer.h"
 
 #include"../PackData/ChPoint.h"
 

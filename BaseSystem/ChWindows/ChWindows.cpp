@@ -1,10 +1,7 @@
 
 #include<windows.h>
 
-#include"../../BaseIncluder/ChBase.h"
-
-
-#include"../ChBaseSystem/ChBaseSystem.h"
+#include"../../../ChCppBaseLibrary/BaseIncluder/ChBase.h"
 
 #include"../../WindowsObject/PackData/ChPoint.h"
 #include"ChWindows.h"
@@ -188,7 +185,7 @@ CH_TO_NUMBER_FUNCTION(CH_Win_Path_Back_CHARA_FUNCTION, "../");
 using namespace ChSystem;
 
 ///////////////////////////////////////////////////////////////////////////////////////
-//ChWindowsÉÅÉ\ÉbÉh
+//ChWindowsÔøΩÔøΩÔøΩ\ÔøΩbÔøΩh
 ///////////////////////////////////////////////////////////////////////////////////////
 
 template<typename CharaType>

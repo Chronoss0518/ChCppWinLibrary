@@ -1,5 +1,5 @@
 #include<Windows.h>
-#include"../../BaseIncluder/ChBase.h"
+#include"../../../ChCppBaseLibrary/BaseIncluder/ChBase.h"
 #include"ChWinDrawTexter.h"
 
 #ifndef CH_WIN_DRAW_TEXTER_FUNCTIONS
@@ -73,7 +73,7 @@ void ChWin::DrawTexter##_AorW::Draw(\
 #endif
 
 ///////////////////////////////////////////////////////////////////////////////////////
-//DrawTexterÉÅÉ\ÉbÉh
+//DrawTexterÔøΩÔøΩÔøΩ\ÔøΩbÔøΩh
 ///////////////////////////////////////////////////////////////////////////////////////
 
 void ChWin::DrawTexterBase::Release()

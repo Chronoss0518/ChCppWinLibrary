@@ -6,9 +6,9 @@
 #include<string>
 #include<map>
 
-#include"../../BasePack/ChStd.h"
-#include"../../BasePack/ChPtr.h"
-#include"../../ClassParts/ChCPInitializer.h"
+#include"../../../ChCppBaseLibrary/BasePack/ChStd.h"
+#include"../../../ChCppBaseLibrary/BasePack/ChPtr.h"
+#include"../../../ChCppBaseLibrary/ClassParts/ChCPInitializer.h"
 
 namespace ChWin
 {

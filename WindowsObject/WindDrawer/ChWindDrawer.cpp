@@ -1,8 +1,8 @@
 #include<Windows.h>
 
-#include"../../BaseIncluder/ChBase.h"
-#include"../PackData/ChPoint.h"
+#include"../../../ChCppBaseLibrary/BaseIncluder/ChBase.h"
 
+#include"../PackData/ChPoint.h"
 #include"ChWindDrawer.h"
 
 using namespace ChWin;

@@ -1,6 +1,5 @@
 #include<Windows.h>
-#include"../../BaseIncluder/ChBase.h"
-
+#include"../../../ChCppBaseLibrary/BaseIncluder/ChBase.h"
 
 #include"../PackData/ChPoint.h"
 #include"ChWinTextBox.h"

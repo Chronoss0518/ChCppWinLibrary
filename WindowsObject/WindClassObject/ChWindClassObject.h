@@ -3,7 +3,7 @@
 #ifndef Ch_Win_CWind_h
 #define Ch_Win_CWind_h
 
-#include"../../ClassParts/ChCPInitializer.h"
+#include"../../../ChCppBaseLibrary/ClassParts/ChCPClassNameGetter.h"
 
 namespace ChWin
 {

@@ -1,7 +1,7 @@
 
 #include<Windows.h>
 #include<wingdi.h>
-#include"../../BaseIncluder/ChBase.h"
+#include"../../../ChCppBaseLibrary/BaseIncluder/ChBase.h"
 
 #include"../PackData/ChPoint.h"
 #include"../PackData/ChRect.h"

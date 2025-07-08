@@ -3,7 +3,7 @@
 #ifndef Ch_Win_WTex_h
 #define Ch_Win_WTex_h
 
-#include"../../BasePack/ChMath.h"
+#include"../../../ChCppBaseLibrary/BasePack/ChMath.h"
 
 namespace ChWin
 {
