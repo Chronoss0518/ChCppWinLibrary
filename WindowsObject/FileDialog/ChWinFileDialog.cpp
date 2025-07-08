@@ -259,3 +259,5 @@ void ChWin::FileDialogW::SaveFileDialog()
 
 	openFlg = true;
 }
+
+CH_STRING_TYPE_USE_FILE_EXPLICIT_DECLARATION(ChWin::FileDialogBase);
