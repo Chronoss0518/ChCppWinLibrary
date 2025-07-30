@@ -69,8 +69,6 @@ namespace ChSystem
 
 	protected://Member Value//
 
-		bool isKeyUpdate;
-
 		HINSTANCE inst = nullptr;
 	};
 

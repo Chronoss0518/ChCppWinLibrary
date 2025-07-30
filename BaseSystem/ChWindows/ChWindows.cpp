@@ -198,8 +198,6 @@ void ChSystem::WindowsBase<CharaType>::Update(HWND _hWnd)
 {
 	if (ChPtr::NullCheck(_hWnd))return;
 
-	isKeyUpdate = false;
-
 	RECT tmp;
 	GetClientRect(_hWnd, &tmp);
 
