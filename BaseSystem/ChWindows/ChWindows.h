@@ -17,6 +17,8 @@ std::basic_string<_CharType> ToRelativePath##_AorW##(const std::basic_string<_Ch
 
 namespace ChWin
 {
+	class WinKeyInput;
+
 	//":\\"//
 	CH_NUMBER_FUNCTION_BASE(GetWinPathCutChara1);
 
@@ -35,10 +37,14 @@ namespace ChSystem
 	template<typename CharaType>
 	class WindowsBase :public BaseSystem
 	{
-	protected://Set Functions//
+	public:
+		
+		WindowsBase();
 
-		//Windows�ł̃L�[�S�̂��`�F�b�N���邽�߂̊֐�//
-		void SetKeyCode()override;
+		~WindowsBase()
+		{
+			delete keyInput;
+		}
 
 	public://GetFunction//
 

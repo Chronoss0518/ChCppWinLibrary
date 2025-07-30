@@ -2,7 +2,7 @@
 #include<windows.h>
 
 #include"../../../ChCppBaseLibrary/BaseIncluder/ChBase.h"
-
+#include"../../WindowsObject/WinKeyInput/ChWinKeyInput.h"
 #include"../../WindowsObject/PackData/ChPoint.h"
 #include"ChWindows.h"
 #include"../../WindowsObject/Mouse/ChWinMouse.h"
@@ -19,8 +19,6 @@ void ChSystem::Windows##_AorW::Init(\
 	if(ChPtr::NullCheck(wndObject.hWnd))return;\
 	wndObject.CreateEnd(_nCmdShow);\
 	inst = _hInst;\
-	buttonList.SetSize((256 / 8) + 1);\
-	isNowPush.SetSize((256 / 8) + 1);\
 	SetInitFlg(true);}\
 \
 void ChSystem::Windows##_AorW::Init(\
@@ -189,6 +187,13 @@ using namespace ChSystem;
 ///////////////////////////////////////////////////////////////////////////////////////
 
 template<typename CharaType>
+ChSystem::WindowsBase<CharaType>::WindowsBase()
+{
+	keyInput = new ChWin::WinKeyInput();
+}
+
+
+template<typename CharaType>
 void ChSystem::WindowsBase<CharaType>::Update(HWND _hWnd)
 {
 	if (ChPtr::NullCheck(_hWnd))return;
@@ -200,25 +205,7 @@ void ChSystem::WindowsBase<CharaType>::Update(HWND _hWnd)
 
 	windSize.w = tmp.right - tmp.left;
 	windSize.h = tmp.bottom - tmp.top;
-}
-
-template<typename CharaType>
-void ChSystem::WindowsBase<CharaType>::SetKeyCode()
-{
-	if (!useSystemButtonFlg)return;
-	if (isKeyUpdate)return;
-	unsigned char keyCode[256];
-	int tmp = GetKeyboardState(keyCode);
-	buttonList.SetAllDownFlg();
-
-	for (unsigned short i = 0; i < 256; i++)
-	{
-		if (!(keyCode[i] & ChStd::MAX_CHAR_BIT))continue;
-
-		buttonList.SetBitTrue((unsigned char)i);
-	}
-
-	isKeyUpdate = true;
+	keyInput->Update();
 }
 
 CH_STRING_TYPE_USE_FILE_EXPLICIT_DECLARATION(ChSystem::WindowsBase);
