@@ -5,10 +5,8 @@
 
 void ChWin::WinKeyInput::Update()
 {
-
 	unsigned char keyCode[256];
 	int tmp = GetKeyboardState(keyCode);
-	SetAllFlgDown();
 
 	for (unsigned short i = 0; i < 256; i++)
 	{
