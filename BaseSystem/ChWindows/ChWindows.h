@@ -41,11 +41,6 @@ namespace ChSystem
 		
 		WindowsBase();
 
-		~WindowsBase()
-		{
-			delete keyInput;
-		}
-
 	public://GetFunction//
 
 		//Wind�n���h���̎擾//

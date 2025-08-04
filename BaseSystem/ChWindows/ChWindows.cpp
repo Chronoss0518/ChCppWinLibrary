@@ -203,6 +203,7 @@ void ChSystem::WindowsBase<CharaType>::Update(HWND _hWnd)
 
 	windSize.w = tmp.right - tmp.left;
 	windSize.h = tmp.bottom - tmp.top;
+	keyInput->SetAllFlgDown();
 	keyInput->Update();
 }
 
@@ -218,6 +219,7 @@ bool ChSystem::WindowsA::IsUpdate()
 
 void ChSystem::WindowsA::Release()
 {
+	ChSystem::BaseSystem::Release();
 	wndObject.Release();
 	SetInitFlg(false);
 }
@@ -232,6 +234,7 @@ bool ChSystem::WindowsW::IsUpdate()
 
 void ChSystem::WindowsW::Release()
 {
+	ChSystem::BaseSystem::Release();
 	wndObject.Release();
 	SetInitFlg(false);
 }
