@@ -21,6 +21,7 @@
 
 #include"WindowsObject/Mouse/ChWinMouse.h"
 #include"WindowsObject/DrawTexter/ChWinDrawTexter.h"
+#include"WindowsObject/WinKeyInput/ChWinKeyInput.h"
 
 //NewVersionWindowsClass//
 
