@@ -32,8 +32,8 @@ namespace ChWin
 
 namespace ChSystem
 {
-	//Windows�ō쐬���ꂽWind��Windows�Ɋւ�����o�͂Ȃǂ��Ǘ������A//
-	//WIndows�S�̂̊Ǘ��N���X//
+	//Windowsで作成されたWindとWindowsに関する入出力などを管理した、//
+	//WIndows全体の管理クラス//
 	template<typename CharaType>
 	class WindowsBase :public BaseSystem
 	{
@@ -43,12 +43,12 @@ namespace ChSystem
 
 	public://GetFunction//
 
-		//Wind�n���h���̎擾//
+		//Windハンドルの取得//
 		virtual HWND GethWnd(void) const = 0;
 
 		virtual HINSTANCE GetInstance(void)const = 0;
 
-		//���b�Z�[�W�̒l��Ԃ��֐�//
+		//メッセージの値を返す関数//
 		virtual const LPMSG GetReturnMassage(void) const = 0;
 
 		unsigned long GetNowTime()override { return timeGetTime(); }
@@ -59,7 +59,7 @@ namespace ChSystem
 
 	public://Is Function//
 
-		//�W���̃J�[�\���̕\���t���O//
+		//標準のカーソルの表示フラグ//
 		inline void IsCursollShou(const bool _f) { ShowCursor(_f); }
 
 	protected://Member Value//
@@ -75,7 +75,7 @@ namespace ChSystem
 
 	public://Init And Release//
 
-		//Wind�̐���(stringVer)//
+		//Windの生成//
 		void Init(
 			const ChWin::WindCreater& _creater,
 			const char* _appName,
@@ -137,7 +137,7 @@ namespace ChSystem
 			HMENU _hMenu = nullptr,
 			LPVOID _param = nullptr);
 
-		//Wind�̉��//
+		//Windの解放//
 		void Release()override;
 
 	public://SetFunction//
@@ -150,19 +150,19 @@ namespace ChSystem
 
 	public://GetFunction//
 
-		//Wind�n���h���̎擾//
+		//Windハンドルの取得//
 		inline HWND GethWnd(void) const override { return wndObject.GethWnd(); }
 
 		inline HINSTANCE GetInstance(void)const override { return wndObject.GetInstance(); }
 
-		//���b�Z�[�W�̒l��Ԃ��֐�//
+		//メッセージの値を返す関数//
 		inline const LPMSG GetReturnMassage(void) const override { return wndObject.GetReturnMassage(); }
 
 		ChWin::WindObjectA& GetWindObject() { return wndObject; }
 
 	public://Is Function//
 
-		//WindMassage���m�F����֐�//
+		//WindMassageを確認する関数//
 		bool IsUpdate()override;
 
 		inline bool IsCursorPosOnWindow() { return wndObject.IsCursorPosOnWindow(); }
@@ -182,7 +182,7 @@ namespace ChSystem
 
 	public://Init And Release//
 
-		//Wind�̐���(stringVer)//
+		//Windの生成//
 		void Init(
 			const ChWin::WindCreater& _creater,
 			const wchar_t* _appName,
@@ -244,7 +244,7 @@ namespace ChSystem
 			HMENU _hMenu = nullptr,
 			LPVOID _param = nullptr);
 
-		//Wind�̉��//
+		//Windの解放//
 		void Release()override;
 
 	public://SetFunction//
@@ -257,19 +257,19 @@ namespace ChSystem
 
 	public://GetFunction//
 
-		//Wind�n���h���̎擾//
+		//Windハンドルの取得//
 		inline HWND GethWnd(void) const override { return wndObject.GethWnd(); }
 
 		inline HINSTANCE GetInstance(void)const override { return wndObject.GetInstance(); }
 
-		//���b�Z�[�W�̒l��Ԃ��֐�//
+		//メッセージの値を返す関数//
 		inline const LPMSG GetReturnMassage(void) const override { return wndObject.GetReturnMassage(); }
 
 		ChWin::WindObjectW& GetWindObject() { return wndObject; }
 
 	public://Is Function//
 
-		//WindMassage���m�F����֐�//
+		//WindMassageを確認する関数//
 		bool IsUpdate()override;
 
 		inline bool IsCursorPosOnWindow() { return wndObject.IsCursorPosOnWindow(); }
