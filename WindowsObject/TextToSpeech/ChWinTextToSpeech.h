@@ -35,11 +35,16 @@ namespace ChWin
 
 	private:
 
+		void StopFunction();
+
+	private:
+
 		ChCpp::MultiThread* thread = nullptr;
 		ISpVoice* voice = nullptr;
 
 		std::wstring speachText = L"";
 		bool endFlg = false;
+		bool stopFlg = false;
 	};
 }
 

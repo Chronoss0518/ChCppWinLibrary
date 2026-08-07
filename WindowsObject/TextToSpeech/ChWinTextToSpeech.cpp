@@ -16,19 +16,24 @@ TextToSpeech::TextToSpeech()
 
 		while (!endFlg)
 		{
-			if (speachText == L"")continue;
-			Stop();
-			if (ChPtr::NullCheck(voice))
+			if (stopFlg)
 			{
-				CoCreateInstance(CLSID_SpVoice, NULL, CLSCTX_ALL, IID_ISpVoice, (void**)&voice);
+				StopFunction();
+				stopFlg = false;
+				continue;
 			}
 
+			if (speachText == L"")continue;
+
+			if (ChPtr::NullCheck(voice))
+				CoCreateInstance(CLSID_SpVoice, NULL, CLSCTX_ALL, IID_ISpVoice, (void**)&voice);
+
 			if (ChPtr::NullCheck(voice))continue;
-			voice->Speak(speachText.c_str(), 0, NULL);
+			voice->Speak(speachText.c_str(), SPF_ASYNC, NULL);
 			speachText = L"";
 		}
 
-		Stop();
+		StopFunction();
 
 		::CoUninitialize();
 
@@ -44,7 +49,6 @@ void TextToSpeech::Release()
 {
 	if (thread == nullptr)return;
 	endFlg = true;
-	Stop();
 	thread->Join();
 	thread->Release();
 	delete thread;
@@ -57,6 +61,11 @@ void TextToSpeech::Speech(const std::wstring& _speach)
 }
 
 void TextToSpeech::Stop()
+{
+	stopFlg = true;
+}
+
+void TextToSpeech::StopFunction()
 {
 	if (ChPtr::NullCheck(voice))return;
 
