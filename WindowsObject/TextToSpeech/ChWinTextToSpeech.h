@@ -25,6 +25,10 @@ namespace ChWin
 
 	public:
 
+		void Release();
+
+	public:
+
 		void Speech(const std::wstring& _speach);
 
 		void Stop();

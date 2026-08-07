@@ -16,13 +16,14 @@ TextToSpeech::TextToSpeech()
 
 		while (!endFlg)
 		{
+			if (speachText == L"")continue;
+			Stop();
 			if (ChPtr::NullCheck(voice))
 			{
 				CoCreateInstance(CLSID_SpVoice, NULL, CLSCTX_ALL, IID_ISpVoice, (void**)&voice);
 			}
 
 			if (ChPtr::NullCheck(voice))continue;
-			if (speachText == L"")continue;
 			voice->Speak(speachText.c_str(), 0, NULL);
 			speachText = L"";
 		}
@@ -36,9 +37,17 @@ TextToSpeech::TextToSpeech()
 
 TextToSpeech::~TextToSpeech()
 {
+	Release();
+}
+
+void TextToSpeech::Release()
+{
+	if (thread == nullptr)return;
 	endFlg = true;
+	Stop();
 	thread->Join();
 	thread->Release();
+	delete thread;
 	thread = nullptr;
 }
 
