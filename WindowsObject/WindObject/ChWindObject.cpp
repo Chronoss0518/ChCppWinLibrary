@@ -71,6 +71,12 @@ void WindObjectBase::SetWindRect(const unsigned int _x, const unsigned int _y, c
 	SetWindowPos(hWnd, HWND_TOP, _x, _y, _w, _h, _flgs);
 }
 
+void WindObjectBase::SetVisibleFlg(const int _flg)
+{
+	visibleFlg = _flg != 0;
+	ShowWindow(hWnd, _flg);
+}
+
 const ChPOINT WindObjectBase::GetWindSize()const
 {
 	ChPOINT out;
@@ -203,8 +209,9 @@ void ChWin::WindObjectBase::CreateEnd(const int _nCmdShow)
 
 	SetInitFlg(true);
 	SetWindID(reinterpret_cast<LONG_PTR>(hWnd));
+	
+	SetVisibleFlg(_nCmdShow);
 
-	ShowWindow(hWnd, _nCmdShow);
 	UpdateWindow(hWnd);
 }
 

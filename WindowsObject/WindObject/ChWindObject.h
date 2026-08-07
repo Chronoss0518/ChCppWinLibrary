@@ -238,6 +238,8 @@ namespace ChWin
 
 		virtual void SetWindID(LONG_PTR _IDPtr) = 0;
 
+		void SetVisibleFlg(const int _flg);
+
 	public://GetFunction//
 
 		virtual LONG_PTR GetWindID() = 0;
@@ -255,6 +257,10 @@ namespace ChWin
 		const ChPOINT GetWindPos()const;
 
 		virtual const HINSTANCE GetInstance()const = 0;
+
+	public:
+
+		inline bool IsVisible() { return visibleFlg; }
 
 	public:
 
@@ -292,6 +298,8 @@ namespace ChWin
 		HWND hWnd = nullptr;
 		HWND parent = nullptr;
 		MSG msg = { 0 };
+
+		bool visibleFlg = true;
 
 		WindProcedure* windProcedures = nullptr;
 
