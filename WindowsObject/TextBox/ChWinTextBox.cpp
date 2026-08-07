@@ -48,11 +48,13 @@ void ChWin::TextBox##_AorW::SetCharLimit(const unsigned int _size){\
 	charLimit = _size;}\
 \
 void ChWin::TextBox##_AorW::Select(){\
+	if(!visibleFlg)return;\
 	Send(EN_SETFOCUS);\
 	SetEnableFlg(true);\
 	selectFlg = true;}\
 \
 void ChWin::TextBox##_AorW::UnSelect(){\
+	if(!visibleFlg)return;\
 	Send(EN_KILLFOCUS);\
 	SetEnableFlg(false);\
 	selectFlg = false;}
