@@ -19,11 +19,13 @@
 #include"WindowsObject/PackData/ChPoint.h"
 #include"WindowsObject/PackData/ChRect.h"
 
+//WindowsClass//
+
 #include"WindowsObject/Mouse/ChWinMouse.h"
 #include"WindowsObject/DrawTexter/ChWinDrawTexter.h"
 #include"WindowsObject/WinKeyInput/ChWinKeyInput.h"
 
-//NewVersionWindowsClass//
+#include"WindowsObject/TextToSpeech/ChWinTextToSpeech.h"
 
 #include"WindowsObject/WindObject/ChWindStyle.h"
 #include"WindowsObject/WindClassObject/ChWindClassStyle.h"
