@@ -26,7 +26,7 @@ TextToSpeech::TextToSpeech()
 			if (speachText == L"")continue;
 
 			if (ChPtr::NullCheck(voice))
-				CoCreateInstance(CLSID_SpVoice, NULL, CLSCTX_ALL, IID_ISpVoice, (void**)&voice);
+				if(FAILED(CoCreateInstance(CLSID_SpVoice, NULL, CLSCTX_ALL, IID_ISpVoice, (void**)&voice)))continue;
 
 			if (ChPtr::NullCheck(voice))continue;
 			voice->Speak(speachText.c_str(), SPF_ASYNC, NULL);
